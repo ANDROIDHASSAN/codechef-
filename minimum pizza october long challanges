@@ -1,0 +1,71 @@
+Problem
+Each pizza consists of 44 slices. There are NN friends and each friend needs exactly XX slices.
+
+Find the minimum number of pizzas they should order to satisfy their appetite.
+
+Input Format
+The first line of input will contain a single integer TT, denoting the number of test cases.
+Each test case consists of two integers NN and XX, the number of friends and the number of slices each friend wants respectively.
+Output Format
+For each test case, output the minimum number of pizzas required.
+
+Constraints
+1 \leq T \leq 1001≤T≤100
+1 \leq N, X \leq 101≤N,X≤10
+Sample 1:
+Input
+Output
+4
+1 5
+2 6
+4 3
+3 5
+2
+3
+3
+4
+Explanation:
+Test case 11: There is only 11 friend who requires 55 slices. If he orders 11 pizza, he will get only 44 slices. Thus, at least 22 pizzas should be ordered to have required number of slices.
+
+Test case 22: There are 22 friends who require 66 slices each. Thus, total 1212 slices are required. To get 1212 slices, they should order 33 pizzas.
+
+Test case 33: There are 44 friends who require 33 slices each. Thus, total 1212 slices are required. To get 1212 slices, they should order 33 pizzas.
+
+Test case 44: There are 33 friends who require 55 slices each. Thus, total 1515 slices are required. To get 1515 slices, they should order at least 44 pizzas.
+
+accepted
+Accepted
+2583
+total-Submissions
+Submissions
+3368
+accuracy
+Accuracy
+80.58
+
+answer:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int N,X;
+	    cin>>N>>X;
+	    int min = N*X;
+	    int max;
+	    if(min%4==0)
+	    {
+	       max=min/4;
+	    }
+	    else{
+	        max=(min/4)+1;
+	    } 
+	    printf("%d\n",max);
+	   
+	}
+	return 0;
+}
